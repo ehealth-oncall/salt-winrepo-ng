@@ -16,8 +16,8 @@ jre8:
     # and put it on the winrepo on master to install it the 'salt://win/repo-ng/jre8/... way
     # to find manual download links for any version use:
     # http://www.java.com/en/download/manual.jsp 
-    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F86418092F0} /norestart'
     {% endif %}
+    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F86418092F0} /norestart'
     # See http://docs.oracle.com/javase/8/docs/technotes/guides/install/config.html for explanation in install options
     # Below uses settings for minimalistic install and automatically remove previous JRE versions.
     install_flags: 'INSTALL_SILENT=1 REBOOT=0 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 NOSTARTMENU=1 SPONSORS=0 REMOVEOUTOFDATEJRES=1'
