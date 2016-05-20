@@ -1,6 +1,6 @@
 ms-vcpp-2015-redist_x64:
   '14.0.23918':
-    full_name: 'Microsoft Visual C++ 2015 Redistributable (x64) - 14.0.23918'
+    full_name: 'Microsoft Visual C++ 2015 x64 Minimum Runtime - 14.0.23918'
     installer: 'https://download.microsoft.com/download/0/5/0/0504B211-6090-48B1-8DEE-3FF879C29968/vc_redist.x64.exe'
     install_flags: '/quiet /norestart'
     uninstaller: 'https://download.microsoft.com/download/0/5/0/0504B211-6090-48B1-8DEE-3FF879C29968/vc_redist.x64.exe'
