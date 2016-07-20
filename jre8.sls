@@ -1,4 +1,30 @@
 jre8:
+  '8.0.1010.13':
+    {% if grains['cpuarch'] == 'AMD64' %}  
+    full_name: 'Java 8 Update 101 (64-bit)'
+    installer: 'salt://win/repo-ng/jre8/jre-8u101-windows-x64.exe'
+    # due to winrepo installer limitations you need to manually download the exe from
+    # http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207231
+    # and put it on the winrepo on master to install it the 'salt://win/repo-ng/jre8/... way
+    # to find manual download links for any version use:
+    # http://www.java.com/en/download/manual.jsp  
+    {% elif grains['cpuarch'] == 'x86' %}
+    full_name: 'Java 8 Update 101'
+    installer: 'salt://win/repo-ng/jre8/jre-8u101-windows-i586.exe'  
+    # due to winrepo installer limitations you need to manually download the exe from
+    # http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207231
+    # and put it on the winrepo on master to install it the 'salt://win/repo-ng/jre8/... way
+    # to find manual download links for any version use:
+    # http://www.java.com/en/download/manual.jsp 
+    {% endif %}
+    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F86418092F0} /norestart'
+    # See http://docs.oracle.com/javase/8/docs/technotes/guides/install/config.html for explanation in install options
+    # Below uses settings for minimalistic install and automatically remove previous JRE versions.
+    install_flags: 'INSTALL_SILENT=1 REBOOT=0 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 NOSTARTMENU=1 SPONSORS=0 REMOVEOUTOFDATEJRES=1'
+    uninstaller: 'msiexec.exe'
+    msiexec: False
+    locale: en_US
+    reboot: False
   '8.0.920.14':
     {% if grains['cpuarch'] == 'AMD64' %}  
     full_name: 'Java 8 Update 92 (64-bit)'
@@ -25,7 +51,7 @@ jre8:
     msiexec: False
     locale: en_US
     reboot: False
-  '8.0.910.14':
+  '8.0.910.15':
     {% if grains['cpuarch'] == 'AMD64' %}
     full_name: 'Java 8 Update 91 (64-bit)'
     installer: 'salt://win/repo-ng/jre8/jre-8u91-windows-x64.exe'

@@ -2,13 +2,13 @@ miktex-basic:
   '2.9':
     full_name: 'MiKTeX 2.9'
     {% if grains['cpuarch'] == 'AMD64' %}
-    installer: 'http://mirror.ox.ac.uk/sites/ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5872-x64.exe'
+    installer: 'http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.6022-x64.exe'
     {% elif grains['cpuarch'] == 'x86' %}
-    installer: 'http://mirror.ox.ac.uk/sites/ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5872.exe'
+    installer: 'http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.6022.exe'
     {% endif %}
     install_flags: '--auto-install=yes --paper-size=A4 --shared --unattended --package-set=basic --program-folder="%ProgramFiles%\MiKTeX 2.9\"'
     uninstaller: 'cmd'
-    uninstall_flags: | 
+    uninstall_flags: |
                      '/c del /Q /F /S "%ProgramFiles%\MiKTeX 2.9\" &
                      reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MiKTeX 2.9" /f &
                      exit 0'
