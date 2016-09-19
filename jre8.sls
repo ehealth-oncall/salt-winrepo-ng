@@ -51,7 +51,7 @@ jre8:
     msiexec: False
     locale: en_US
     reboot: False
-  '8.0.910.15':
+  '8.0.910.14':
     {% if grains['cpuarch'] == 'AMD64' %}
     full_name: 'Java 8 Update 91 (64-bit)'
     installer: 'salt://win/repo-ng/jre8/jre-8u91-windows-x64.exe'
@@ -64,7 +64,7 @@ jre8:
     {% elif grains['cpuarch'] == 'x86' %}
     full_name: 'Java 8 Update 91'
     installer: 'salt://win/repo-ng/jre8_x86/jre-8u91-windows-i586.exe'
-    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F86418091F0} /norestart'
+    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F83218091F0} /norestart'
     # due to winrepo installer limitations you need to manually download the exe from
     # http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207773
     # and put it on the winrepo on master to install it the 'salt://win/repo-ng/jre8_x86/... way
@@ -89,7 +89,7 @@ jre8:
     {% elif grains['cpuarch'] == 'x86' %}
     full_name: 'Java 8 Update 77'
     installer: 'salt://win/repo-ng/jre8_x86/jre-8u77-windows-i586.exe'
-    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F86418077F0} /norestart'
+    uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F83218077F0} /norestart'
     # due to winrepo installer limitations you need to manually download the exe from
     # http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207229
     # and put it on the winrepo on master to install it the 'salt://win/repo-ng/jre8_x86/... way
