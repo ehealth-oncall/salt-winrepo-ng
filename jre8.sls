@@ -2,7 +2,7 @@ jre8:
   '8.0.1310.11':
     {% if grains['cpuarch'] == 'AMD64' %}
     full_name: 'Java 8 Update 131 (64-bit)'
-    installer: 'salt://win/repo-ng/jre8/jre-8u131-windows-x64.exe'
+    installer: 'salt://binaries/java/1.8/jre-8u131-windows-x64.exe'
     uninstall_flags: '/qn /x {26A24AE4-039D-4CA4-87B4-2F64180131F0} /norestart'
     # due to winrepo installer limitations you need to manually download the exe from
     # http://javadl.oracle.com/webapps/download/AutoDL?BundleId=220315_d54c1d3a095b4ff2b6607d096fa80163
@@ -25,7 +25,7 @@ jre8:
     # you more versions and also different builds. IF you do use these, make sure you adapt your sls file accordingly.  
     # http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
     {% endif %}
-    install_flags: '/s REBOOT=Suppress SPONSORS=0'
+    install_flags: 'INSTALL_SILENT=1 REBOOT=0 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 NOSTARTMENU=1 SPONSORS=0 REMOVEOUTOFDATEJRES=1'
     uninstaller: 'msiexec.exe'
     msiexec: False
     locale: en_US
